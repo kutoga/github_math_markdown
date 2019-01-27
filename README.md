@@ -2,11 +2,11 @@
 
 Ever wanted to use formulas in your markdown-files on GitHub? Unfortunately, this feature is not enabled by GitHub.
 Therefore, one might generate images with the formulas and insert them to the markdown-file. This is a relatively
-"painful" process. Another solution is this repsitory:
+"painful" process. Another solution is the standalone script `md_replace_math.py` in repository:
 
-Just execute `cat MY_MARKDOWN_FILE.md | python3 ./md_replace_math.py --imgdir ./img > MY_MARKDOW_FILE_WITH_MATH.py`
+Just execute `cat MY_MARKDOWN_FILE.md | python3 ./md_replace_math.py --imgdir ./img > MY_MARKDOW_FILE_WITH_MATH.md`
 
-The parameter `--imgdir` forces to store the generated math SVG-images to the given directory. If this parameter
+The parameter `--imgdir` forces to store the generated (vector) math SVG-images to the given directory. If this parameter
 is not present, the generated markdown document will have links to an external service. In this case, the document
 cannot be viewed without an internet connection.
 
