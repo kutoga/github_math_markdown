@@ -1,4 +1,5 @@
 from typing import Optional
+from functools import lru_cache
 import re
 import os
 import sys
@@ -12,8 +13,8 @@ latex_math_regex = re.compile(r'\$(?P<math_expr>[^\$]*)\$')
 image_type = 'svg'
 base_url = 'http://latex.codecogs.com/{image_type}.download?%5Cinline%20%5Cdpi%7B120%7D%20%5Clarge%20{math_exp}'
 
-def replace_latex_math_in_match(match, image_directory: Optional[str]) -> str:
-    math_expr = match.groups('math_expr')[0]
+@lru_cache(maxsize=None)
+def replace_latex_math_expression(math_expr: str, image_directory: Optional[str]) -> str:
     img_url = base_url.format(
         math_exp=quote(math_expr),
         image_type=quote(image_type))
@@ -28,6 +29,11 @@ def replace_latex_math_in_match(match, image_directory: Optional[str]) -> str:
             fh.write(img)
         markdown_img = f'![mathematical expression]({img_file})'
     return markdown_img
+
+def replace_latex_math_in_match(match, image_directory: Optional[str]) -> str:
+    math_expr = match.groups('math_expr')[0]
+    print(f"Found mathematical expression: {math_expr}", file=sys.stderr)
+    return replace_latex_math_expression(math_expr, image_directory)
 
 def replace_latex_math(text: str, image_directory: Optional[str]) -> str:
     return latex_math_regex.sub(lambda match: replace_latex_math_in_match(match, image_directory), line)

@@ -2,7 +2,7 @@
 
 Ever wanted to use formulas in your markdown-files on GitHub? Unfortunately, this feature is not enabled by GitHub.
 Therefore, one might generate images with the formulas and insert them to the markdown-file. This is a relatively
-"painfull" process. Another solution is this repsitory:
+"painful" process. Another solution is this repsitory:
 
 Just execute `cat MY_MARKDOWN_FILE.md | ./md_replace_math.py --imgdir ./img > MY_MARKDOW_FILE_WITH_MATH.py`
 
@@ -26,24 +26,25 @@ $x^2+\exp\left(\int\limits_{-\infty}^{a} \sin(x)\exp(x)\mathrm{d}x\right)x^{x}$
 Some more formulas:
 
 $
-f(x)=g(x)h(x)\Rightarrow f^{*}(x)=g^{*}(x)h^{*}(x)$  
+f(x)=g(x)h(x)\Rightarrow f^{*}(x)=g^{*}(x)h^{*}(x)$
 
 $\Rightarrow$
 
-$f(x)=g(x)h(x)\Rightarrow f^{*}(x)=g^{*}(x)h^{*}(x)$  
+$f(x)=g(x)h(x)\Rightarrow f^{*}(x)=g^{*}(x)h^{*}(x)$
 
 
-  
+
 $
-f(x)=c g(x), c\neq 0 \Rightarrow f^{*}(x)=g^{*}(x)$  
+f(x)=c g(x), c\neq 0 \Rightarrow f^{*}(x)=g^{*}(x)$
 
 $\Rightarrow$
 
-$f(x)=c g(x), c\neq 0 \Rightarrow f^{*}(x)=g^{*}(x)$  
+$f(x)=c g(x), c\neq 0 \Rightarrow f^{*}(x)=g^{*}(x)$
 
-etc. 
+etc.
 
 ## Notes
 
 This repsoitory itself uses the described script to insert the math formulas. There is a super-simple `Makefile`
 which is used to generate the final `README.md`.
+

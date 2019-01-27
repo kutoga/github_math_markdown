@@ -2,7 +2,7 @@
 
 Ever wanted to use formulas in your markdown-files on GitHub? Unfortunately, this feature is not enabled by GitHub.
 Therefore, one might generate images with the formulas and insert them to the markdown-file. This is a relatively
-"painfull" process. Another solution is this repsitory:
+"painful" process. Another solution is this repsitory:
 
 Just execute `cat MY_MARKDOWN_FILE.md | ./md_replace_math.py --imgdir ./img > MY_MARKDOW_FILE_WITH_MATH.py`
 
@@ -26,24 +26,25 @@ This will result in:
 Some more formulas:
 
 $
-f(x)=g(x)h(x)\Rightarrow f^{*}(x)=g^{*}(x)h^{*}(x)$  
+f(x)=g(x)h(x)\Rightarrow f^{*}(x)=g^{*}(x)h^{*}(x)$
 
 ![mathematical expression](doc/img/b85f1f515bef42274c3bb29b593a866c.svg)
 
-![mathematical expression](doc/img/01381ac9312352f2700cd1467d14cd6b.svg)  
+![mathematical expression](doc/img/01381ac9312352f2700cd1467d14cd6b.svg)
 
 
-  
+
 $
-f(x)=c g(x), c\neq 0 \Rightarrow f^{*}(x)=g^{*}(x)$  
+f(x)=c g(x), c\neq 0 \Rightarrow f^{*}(x)=g^{*}(x)$
 
 ![mathematical expression](doc/img/b85f1f515bef42274c3bb29b593a866c.svg)
 
-![mathematical expression](doc/img/2760bc166732e71b4716c97e0ce25447.svg)  
+![mathematical expression](doc/img/2760bc166732e71b4716c97e0ce25447.svg)
 
-etc. 
+etc.
 
 ## Notes
 
 This repsoitory itself uses the described script to insert the math formulas. There is a super-simple `Makefile`
 which is used to generate the final `README.md`.
+

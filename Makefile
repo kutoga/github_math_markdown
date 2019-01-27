@@ -5,7 +5,7 @@ TARGETS=README.md
 all: $(TARGETS)
 
 clean:
-	$(RM) $(TARGETS)
+	$(RM) -r doc/img $(TARGETS)
 
 README.md: doc/README_plain.md ./md_replace_math.py
 	$(RM) -r doc/img
